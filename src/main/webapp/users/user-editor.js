@@ -19,17 +19,17 @@ class UserEditor extends React.Component {
     render() {
         return(
             <div className="container">
-                <h1>User Editor {this.state.user.title}</h1>
+                <h1>User Editor {this.state.user.username}</h1>
                 <input className="form-control" readOnly={true} value={this.state.user.id}/>
                 <input
                     onChange={(event) => this.setState({
                         user: {
                             ...this.state.user,
-                            title: event.target.value
+                            username: event.target.value
                         }
                     })}
                     className="form-control"
-                    value={this.state.user.title}/>
+                    value={this.state.user.username}/>
                 <button onClick={this.saveUser}>
                     Save
                 </button>
