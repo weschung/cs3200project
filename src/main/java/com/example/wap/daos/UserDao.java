@@ -33,7 +33,7 @@ public class UserDao {
         user.setDob("00/00/0000");
         user.setFirst_name("First Name");
         user.setLast_name("Last Name");
-        user.setEmail("Email")
+        user.setEmail("Email");
         return userRepository.save(user);
     }
     @GetMapping("/renameUser/{id}/{newUsername}")
