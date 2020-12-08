@@ -29,9 +29,11 @@ class FanList extends React.Component {
                             this.state.fans.map(fan =>
                                 <tr>
                                     <td>
-                                        {fan.season_pass.toString()}
+                                        Season Pass: {fan.season_pass.toString()};
                                     </td>
-
+                                    <td>
+                                        Team ID: {fan.team_id};
+                                    </td>
                                     <td>
                                         <button onClick={() => this.deleteFan(fan.id)}>
                                             Delete

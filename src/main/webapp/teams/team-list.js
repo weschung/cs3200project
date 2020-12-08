@@ -29,7 +29,22 @@ class TeamList extends React.Component {
                             this.state.teams.map(team =>
                                 <tr>
                                     <td>
-                                        {team.team_name}
+                                        Team: {team.team_name};
+                                    </td>
+                                    <td>
+                                        Conference: {team.conference};
+                                    </td>
+                                    <td>
+                                        Year Founded: {team.yr_founded};
+                                    </td>
+                                    <td>
+                                        Record: {team.record};
+                                    </td>
+                                    <td>
+                                        Standing: {team.standing};
+                                    </td>
+                                    <td>
+                                        Schedule: {team.game_schedule};
                                     </td>
                                     <td>
                                         <button onClick={() => this.deleteTeam(team.id)}>
