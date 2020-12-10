@@ -29,6 +29,12 @@ class FanList extends React.Component {
                             this.state.fans.map(fan =>
                                 <tr>
                                     <td>
+                                        {fan.id}
+                                    </td>
+                                    <td>
+                                        {fan.username}
+                                    </td>
+                                    <td>
                                         {fan.season_pass.toString()}
                                     </td>
 

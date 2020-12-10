@@ -1,6 +1,7 @@
 package com.example.wap.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -15,6 +16,28 @@ public class User {
     private String first_name;
     private String last_name;
     private String email;
+
+    @OneToMany(mappedBy = "user")
+    private List<Phone> phones;
+
+    @OneToMany(mappedBy = "user")
+    private List<Address> addresses;
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phones) {
+        this.phones = phones;
+    }
 
     public Integer getId() {
         return id;
