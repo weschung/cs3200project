@@ -28,10 +28,6 @@ class TeamList extends React.Component {
                         {
                             this.state.teams.map(team =>
                                 <tr>
-<<<<<<< HEAD
-                                     <td>
-                                        {team.team_name}
-=======
                                     <td>
                                         Team: {team.team_name};
                                     </td>
@@ -49,7 +45,6 @@ class TeamList extends React.Component {
                                     </td>
                                     <td>
                                         Schedule: {team.game_schedule};
->>>>>>> 3193be9cacc3077814b6a2f3be1017878e4739ca
                                     </td>
                                     <td>
                                         {team.yr_founded}
