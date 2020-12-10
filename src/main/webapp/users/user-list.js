@@ -29,7 +29,19 @@ class UserList extends React.Component {
                             this.state.users.map(user =>
                                 <tr>
                                     <td>
-                                        {user.username}
+                                        Username: {user.username};
+                                    </td>
+                                    <td>
+                                        Password: {user.password};
+                                    </td>
+                                    <td>
+                                        Name: {user.first_name} {user.last_name};
+                                    </td>
+                                    <td>
+                                        Date of Birth: {user.dob};
+                                    </td>
+                                    <td>
+                                        Email: {user.email};
                                     </td>
                                     <td>
                                         <button onClick={() => this.deleteUser(user.id)}>
