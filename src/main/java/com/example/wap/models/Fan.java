@@ -1,16 +1,25 @@
 package com.example.wap.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import net.minidev.json.annotate.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "fans")
 public class Fan extends User{
-
-    @Column(name = "team_id")
     private Integer team_id;
-
-    @Column(name = "season_pass")
     private Boolean season_pass;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "fan")
+    private List<Ticket> games;
+
+    public List<Ticket> getGames() { return games; }
+
+    public void setGames(List<Ticket> games) {
+        this.games = games;
+    }
 
     public Integer getTeam_id() {
         return team_id;
