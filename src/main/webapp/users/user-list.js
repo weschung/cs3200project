@@ -44,6 +44,12 @@ class UserList extends React.Component {
                                         Email: {user.email};
                                     </td>
                                     <td>
+                                        Phone(s): {};
+                                    </td>
+                                    <td>
+                                        Address(es): {};
+                                    </td>
+                                    <td>
                                         <button onClick={() => this.deleteUser(user.id)}>
                                             Delete
                                         </button>

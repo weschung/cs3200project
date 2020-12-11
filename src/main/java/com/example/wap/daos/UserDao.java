@@ -44,4 +44,49 @@ public class UserDao {
         user.setUsername(newUsername);
         return userRepository.save(user);
     }
+
+    @GetMapping("/changePassword/{id}/{newPassword}")
+    public User changePassword(
+            @PathVariable("id") Integer id,
+            @PathVariable("newPassword") String newPassword) {
+        User user = userRepository.findById(id).get();
+        user.setPassword(newPassword);
+        return userRepository.save(user);
+    }
+
+    @GetMapping("/changeDob/{id}/{newDob}")
+    public User changeDob(
+            @PathVariable("id") Integer id,
+            @PathVariable("newDob") String newDob) {
+        User user = userRepository.findById(id).get();
+        user.setDob(newDob);
+        return userRepository.save(user);
+    }
+
+    @GetMapping("/changeFirst/{id}/{newFirst}")
+    public User changeFirst(
+            @PathVariable("id") Integer id,
+            @PathVariable("newFirst") String newFirst) {
+        User user = userRepository.findById(id).get();
+        user.setFirst_name(newFirst);
+        return userRepository.save(user);
+    }
+
+    @GetMapping("/changeLast/{id}/{newLast}")
+    public User changeLast(
+            @PathVariable("id") Integer id,
+            @PathVariable("newLast") String newLast) {
+        User user = userRepository.findById(id).get();
+        user.setLast_name(newLast);
+        return userRepository.save(user);
+    }
+
+    @GetMapping("/changeEmail/{id}/{newEmail}")
+    public User changeEmail(
+            @PathVariable("id") Integer id,
+            @PathVariable("newEmail") String newEmail) {
+        User user = userRepository.findById(id).get();
+        user.setEmail(newEmail);
+        return userRepository.save(user);
+    }
 }

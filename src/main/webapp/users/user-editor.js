@@ -16,6 +16,21 @@ class UserEditor extends React.Component {
     saveUser = () =>
         renameUser(this.state.user)
 
+    // saveUser = () =>
+    //     changePassword(this.state.user)
+    //
+    // saveUser = () =>
+    //     changeDob(this.state.user)
+    //
+    // saveUser = () =>
+    //     changeFirst(this.state.user)
+    //
+    // saveUser = () =>
+    //     changeLast(this.state.user)
+    //
+    // saveUser = () =>
+    //     changeEmail(this.state.user)
+
     render() {
         return(
             <div className="container">
