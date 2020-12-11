@@ -28,8 +28,8 @@ public class GameDao {
     @GetMapping("/createGame")
     public Game createGame() {
         Game game = new Game();
-        game.setHome_team("Home Team");
-        game.setAway_team("Away Team");
+        game.setTeam(0);
+        game.setOpponent(0);
         game.setScore("Score");
         return gameRepository.save(game);
     }

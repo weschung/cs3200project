@@ -29,16 +29,13 @@ class GameList extends React.Component {
                         this.state.games.map(game =>
                             <tr>
                                 <td>
-                                    Home Team: {game.home_team}
+                                    Team: {game.team}
                                 </td>
                                 <td>
-                                    Away Team: {game.away_team}
+                                    Opponent: {game.opponent}
                                 </td>
                                 <td>
                                     Score: {game.score}
-                                </td>
-                                <td>
-                                    Time: {game.time}
                                 </td>
                                 <td>
                                     <button onClick={() => this.deleteGame(game.id)}>
