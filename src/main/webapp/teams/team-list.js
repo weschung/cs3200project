@@ -64,7 +64,7 @@ class TeamList extends React.Component {
                 <button onClick={this.createTeam}>
                     Create
                 </button> <br/> <br/>
-                <a href="http://localhost:8080/home.html">
+                <a href="/home-manager.html">
                     Home
                 </a>
             </div>

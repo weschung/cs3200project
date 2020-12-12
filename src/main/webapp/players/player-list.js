@@ -52,7 +52,7 @@ class PlayerList extends React.Component {
                 <button onClick={this.createPlayer}>
                     Create
                 </button> <br/> <br/>
-                <a href="http://localhost:8080/home.html">
+                <a href="/home-manager.html">
                     Home
                 </a>
             </div>
