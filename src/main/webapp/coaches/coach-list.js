@@ -49,7 +49,9 @@ class CoachList extends React.Component {
                     }
                     </tbody>
                 </table>
-                <br/> <br/>
+                <button onClick={this.createUser}>
+                    Create
+                </button> <br/> <br/>
                 <a href="http://localhost:8080/home.html">
                     Home
                 </a>

@@ -49,7 +49,9 @@ class ManagerList extends React.Component {
                     }
                     </tbody>
                 </table>
-                <br/> <br/>
+                <button onClick={this.createManager}>
+                    Create
+                </button> <br/> <br/>
                 <a href="http://localhost:8080/home.html">
                     Home
                 </a>
