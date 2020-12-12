@@ -12,6 +12,7 @@ public class Fan extends User{
 
     private Boolean season_pass;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "fan")
     private List<Ticket> tickets;
 

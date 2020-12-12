@@ -20,6 +20,7 @@ public class Game {
     @JoinColumn(name = "team", nullable = false)
     private Team team_game;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "game")
     private List<Ticket> tickets;
 
