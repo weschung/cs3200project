@@ -29,10 +29,22 @@ class ManagerList extends React.Component {
                         this.state.managers.map(manager =>
                             <tr>
                                 <td>
-                                    Meeting Schedule: {manager.meeting_schedule};
+                                    Name: {manager.first_name} {manager.last_name};
                                 </td>
                                 <td>
-                                    Team ID: {manager.team_id};
+                                    Username: {manager.username};
+                                </td>
+                                <td>
+                                    Password: {manager.password};
+                                </td>
+                                <td>
+                                    Date of Birth: {manager.dob};
+                                </td>
+                                <td>
+                                    Email: {manager.email};
+                                </td>
+                                <td>
+                                    Meeting Schedule: {manager.meeting_schedule};
                                 </td>
                                 <td>
                                     <button onClick={() => this.deleteManager(manager.id)}>
