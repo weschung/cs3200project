@@ -28,10 +28,6 @@ public class TicketDao {
     @GetMapping("/createTicket")
     public Ticket createTicket() {
         Ticket ticket = new Ticket();
-        ticket.setPrice(0.00F);
-        ticket.setSeat("Seat");
-        ticket.setDate("Date");
-        ticket.setTime("Time");
         return ticketRepository.save(ticket);
     }
 }

@@ -1,23 +1,23 @@
 class CoachList extends React.Component {
 
     state = {
-        coachs: []
+        coaches: []
     }
 
-    findAllCoachs = () =>
-        findAllCoachs()
-            .then(coachs => this.setState({coachs}))
+    findAllCoaches = () =>
+        findAllCoaches()
+            .then(coaches => this.setState({coaches}))
 
     componentDidMount = () =>
-        this.findAllCoachs()
+        this.findAllCoaches()
 
     createCoach = () =>
         createCoach()
-            .then(this.findAllCoachs)
+            .then(this.findAllCoaches)
 
     deleteCoach = (id) =>
         deleteCoach(id)
-            .then(this.findAllCoachs)
+            .then(this.findAllCoaches)
 
     render() {
         return(
@@ -26,7 +26,7 @@ class CoachList extends React.Component {
                 <table>
                     <tbody>
                     {
-                        this.state.coachs.map(coach =>
+                        this.state.coaches.map(coach =>
                             <tr>
                                 <td>
                                     Name: {coach.coach_name};
