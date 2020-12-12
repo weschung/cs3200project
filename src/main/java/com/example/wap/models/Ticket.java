@@ -1,31 +1,37 @@
 package com.example.wap.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="tickets")
-@IdClass(TicketId.class)
 public class Ticket {
     @Id
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn
-            (name="fan_id", referencedColumnName="id")
-    private Fan fan;
-
-    @Id
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn
-            (name="game_id", referencedColumnName="id")
-    private Game game;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private Float price;
     private String seat;
     private String date;
     private String time;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name="fan_id")
+    private Fan fan;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name="game_id")
+    private Game game;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Fan getFan() {
         return fan;
