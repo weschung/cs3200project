@@ -16,8 +16,8 @@ public class Address {
     private String zip;
     private Boolean primary;
 
-    @JsonIgnore
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

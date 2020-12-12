@@ -1,5 +1,8 @@
 package com.example.wap.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,13 +11,29 @@ public class Coach{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer team_id;
-    private Integer manager_id;
     private String coach_name;
     private String strategy;
     private String practice_schedule;
     private Integer coach_payment;
     private String coach_bank;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "team_id")
+    private Team team_coach;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "manager_id")
+    private Manager manager_coach;
+
+    public void setManager_coach(Manager manager_coach) {
+        this.manager_coach = manager_coach;
+    }
+
+    public void setTeam_coach(Team team_coach) {
+        this.team_coach = team_coach;
+    }
 
     public Integer getId() {
         return id;
@@ -22,22 +41,6 @@ public class Coach{
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getTeam_id() {
-        return team_id;
-    }
-
-    public void setTeam_id(Integer team_id) {
-        this.team_id = team_id;
-    }
-
-    public Integer getManager_id() {
-        return manager_id;
-    }
-
-    public void setManager_id(Integer manager_id) {
-        this.manager_id = manager_id;
     }
 
     public String getCoach_name() {

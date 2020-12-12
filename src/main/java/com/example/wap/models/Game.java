@@ -1,5 +1,6 @@
 package com.example.wap.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -11,12 +12,17 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer team;
-    private Integer opponent;
+    private String opponent;
     private String score;
+
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "team", nullable = false)
+    private Team team_game;
+
     @JsonManagedReference
-    @OneToMany(mappedBy = "fan")
-    private List<Ticket> fans;
+    @OneToMany(mappedBy = "game")
+    private List<Ticket> tickets;
 
     public Integer getId() {
         return id;
@@ -26,21 +32,29 @@ public class Game {
         this.id = id;
     }
 
-    public List<Ticket> getFans() {
-        return fans;
+    public List<Ticket> getTickets() {
+        return tickets;
     }
 
-    public void setFans(List<Ticket> fans) {
-        this.fans = fans;
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 
-    public Integer getTeam() { return team; }
+    public Team getTeam_game() {
+        return team_game;
+    }
 
-    public void setTeam(Integer team) { this.team = team; }
+    public void setTeam_game(Team team_game) {
+        this.team_game = team_game;
+    }
 
-    public Integer getOpponent() { return opponent; }
+    public String getOpponent() {
+        return opponent;
+    }
 
-    public void setOpponent(Integer opponent) { this.opponent = opponent; }
+    public void setOpponent(String opponent) {
+        this.opponent = opponent;
+    }
 
     public String getScore() { return score; }
 

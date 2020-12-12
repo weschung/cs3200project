@@ -1,6 +1,7 @@
 package com.example.wap.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="teams")
@@ -14,6 +15,50 @@ public class Team {
     private String record;
     private String standing;
     private String game_schedule;
+
+    @OneToMany(mappedBy = "team_player")
+    private List<Player> players;
+
+    @OneToMany(mappedBy = "team_coach")
+    private List<Coach> coaches;
+
+    @OneToMany(mappedBy = "team_fan")
+    private List<Fan> fans;
+
+    @OneToMany(mappedBy = "team_game")
+    private List<Game> games;
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public List<Coach> getCoaches() {
+        return coaches;
+    }
+
+    public void setCoaches(List<Coach> coaches) {
+        this.coaches = coaches;
+    }
+
+    public List<Fan> getFans() {
+        return fans;
+    }
+
+    public void setFans(List<Fan> fans) {
+        this.fans = fans;
+    }
+
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Game> games) {
+        this.games = games;
+    }
 
     public Integer getId() {
         return id;

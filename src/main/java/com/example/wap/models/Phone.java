@@ -13,8 +13,8 @@ public class Phone {
     private String phone;
     private Boolean primary;
 
-    @JsonIgnore
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

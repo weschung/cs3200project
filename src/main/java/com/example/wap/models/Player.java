@@ -1,5 +1,8 @@
 package com.example.wap.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,14 +11,30 @@ public class Player{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer team_id;
-    private Integer manager_id;
     private String player_name;
     private Integer age;
-    private Double height;
+    private String height;
     private Integer player_payment;
     private String player_bank;
     private String statistic;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "team_id")
+    private Team team_player;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "manager_id")
+    private Manager manager_player;
+
+    public void setManager_player(Manager manager_player) {
+        this.manager_player = manager_player;
+    }
+
+    public void setTeam_player(Team team_player) {
+        this.team_player = team_player;
+    }
 
     public Integer getId() {
         return id;
@@ -23,22 +42,6 @@ public class Player{
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getTeam_id() {
-        return team_id;
-    }
-
-    public void setTeam_id(Integer team_id) {
-        this.team_id = team_id;
-    }
-
-    public Integer getManager_id() {
-        return manager_id;
-    }
-
-    public void setManager_id(Integer manager_id) {
-        this.manager_id = manager_id;
     }
 
     public String getPlayer_name() {
@@ -57,11 +60,11 @@ public class Player{
         this.age = age;
     }
 
-    public Double getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(Double height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 

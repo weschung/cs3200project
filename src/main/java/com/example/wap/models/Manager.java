@@ -1,23 +1,33 @@
 package com.example.wap.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "managers")
 public class Manager extends User{
-
-    @Column(name = "team_id")
-    private Integer team_id;
-
-    @Column(name = "meeting_schedule")
     private String meeting_schedule;
 
-    public Integer getTeam_id() {
-        return team_id;
+    @OneToMany(mappedBy = "manager_player")
+    private List<Player> players;
+
+    @OneToMany(mappedBy = "manager_coach")
+    private List<Coach> coaches;
+
+    public List<Player> getPlayers() {
+        return players;
     }
 
-    public void setTeam_id(Integer team_id) {
-        this.team_id = team_id;
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public List<Coach> getCoaches() {
+        return coaches;
+    }
+
+    public void setCoaches(List<Coach> coaches) {
+        this.coaches = coaches;
     }
 
     public String getMeeting_schedule() {

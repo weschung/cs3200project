@@ -9,25 +9,31 @@ import java.util.List;
 @Entity
 @Table(name = "fans")
 public class Fan extends User{
-    private Integer team_id;
+
     private Boolean season_pass;
+
     @JsonManagedReference
     @OneToMany(mappedBy = "fan")
-    private List<Ticket> games;
+    private List<Ticket> tickets;
 
-    public List<Ticket> getGames() { return games; }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "team_id")
+    private Team team_fan;
 
-    public void setGames(List<Ticket> games) {
-        this.games = games;
+
+    public void setTeam_fan(Team team_fan) {
+        this.team_fan = team_fan;
     }
 
-    public Integer getTeam_id() {
-        return team_id;
+    public List<Ticket> getTickets() {
+        return tickets;
     }
 
-    public void setTeam_id(Integer team_id) {
-        this.team_id = team_id;
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
+
 
     public Boolean getSeason_pass() {
         return season_pass;
