@@ -22,10 +22,21 @@ public class Coach{
     @JoinColumn(name = "team_id")
     private Team team_coach;
 
+    @Column(name = "team_id", updatable = false, insertable = false)
+    private String team_id;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @JoinColumn(name = "manager_id")
     private Manager manager_coach;
+
+    public String getTeam_id() {
+        return team_id;
+    }
+
+    public void setTeam_id(String team_id) {
+        this.team_id = team_id;
+    }
 
     public void setManager_coach(Manager manager_coach) {
         this.manager_coach = manager_coach;
