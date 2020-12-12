@@ -52,6 +52,9 @@ class FanList extends React.Component {
                         }
                     </tbody>
                 </table>
+                <button onClick={this.createFan}>
+                    Create
+                </button>
                 </div>
         )
     }

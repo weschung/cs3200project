@@ -1,6 +1,7 @@
 package com.example.wap.daos;
 
 import com.example.wap.models.Fan;
+import com.example.wap.models.User;
 import com.example.wap.repositories.FanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,15 @@ public class FanDao {
     public void deleteFan(
             @PathVariable("id") Integer id) {
         FanRepository.deleteById(id);
+    }
+
+    @GetMapping("/createFan")
+    public Fan createFan() {
+        User user = new User();
+        Fan fan = new Fan();
+        fan.setId(user.getId());
+        fan.setSeason_pass(false);
+        return FanRepository.save(fan);
     }
 
     @GetMapping("/buypassFan/{id}/{newpass}")
