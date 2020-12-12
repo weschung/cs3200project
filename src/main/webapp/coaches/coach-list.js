@@ -49,6 +49,10 @@ class CoachList extends React.Component {
                     }
                     </tbody>
                 </table>
+                <br/> <br/>
+                <a href="http://localhost:8080/home.html">
+                    Home
+                </a>
             </div>
         )
     }

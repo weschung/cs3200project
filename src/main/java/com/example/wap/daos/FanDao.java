@@ -44,4 +44,67 @@ public class FanDao {
         fan.setSeason_pass(newpass);
         return FanRepository.save(fan);
     }
+
+    @GetMapping("/renameFan/{id}/{newUsername}")
+    public Fan renameFan(
+            @PathVariable("id") Integer id,
+            @PathVariable("newUsername") String newUsername) {
+        Fan fan = FanRepository.findById(id).get();
+        fan.setUsername(newUsername);
+        return FanRepository.save(fan);
+    }
+
+    @GetMapping("/changeFanTeam/{id}/{newTeam}")
+    public Fan changeFanTeam(
+            @PathVariable("id") Integer id,
+            @PathVariable("newTeam") Integer newTeam) {
+        Fan fan = FanRepository.findById(id).get();
+        fan.setTeam_id(newTeam);
+        return FanRepository.save(fan);
+    }
+
+    @GetMapping("/changeFanPassword/{id}/{newPassword}")
+    public Fan changeFanPassword(
+            @PathVariable("id") Integer id,
+            @PathVariable("newPassword") String newPassword) {
+        Fan fan = FanRepository.findById(id).get();
+        fan.setPassword(newPassword);
+        return FanRepository.save(fan);
+    }
+
+    @GetMapping("/changeFanDob/{id}/{newDob}")
+    public Fan changeFanDob(
+            @PathVariable("id") Integer id,
+            @PathVariable("newDob") String newDob) {
+        Fan fan = FanRepository.findById(id).get();
+        fan.setDob(newDob);
+        return FanRepository.save(fan);
+    }
+
+    @GetMapping("/changeFanFirst/{id}/{newFirst}")
+    public Fan changeFanFirst(
+            @PathVariable("id") Integer id,
+            @PathVariable("newFirst") String newFirst) {
+        Fan fan = FanRepository.findById(id).get();
+        fan.setFirst_name(newFirst);
+        return FanRepository.save(fan);
+    }
+
+    @GetMapping("/changeFanLast/{id}/{newLast}")
+    public Fan changeFanLast(
+            @PathVariable("id") Integer id,
+            @PathVariable("newLast") String newLast) {
+        Fan fan = FanRepository.findById(id).get();
+        fan.setLast_name(newLast);
+        return FanRepository.save(fan);
+    }
+
+    @GetMapping("/changeFanEmail/{id}/{newEmail}")
+    public Fan changeFanEmail(
+            @PathVariable("id") Integer id,
+            @PathVariable("newEmail") String newEmail) {
+        Fan fan = FanRepository.findById(id).get();
+        fan.setEmail(newEmail);
+        return FanRepository.save(fan);
+    }
 }

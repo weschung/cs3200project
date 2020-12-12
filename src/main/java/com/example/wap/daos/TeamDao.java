@@ -39,4 +39,49 @@ public class TeamDao {
         team.setTeam_name(newTeamname);
         return teamRepository.save(team);
     }
+
+    @GetMapping("/changeYr/{id}/{newYr}")
+    public Team changeYr(
+            @PathVariable("id") Integer id,
+            @PathVariable("newYr") Integer newYr) {
+        Team team = teamRepository.findById(id).get();
+        team.setYr_founded(newYr);
+        return teamRepository.save(team);
+    }
+
+    @GetMapping("/changeConference/{id}/{newConference}")
+    public Team changeConference(
+            @PathVariable("id") Integer id,
+            @PathVariable("newConference") String newConference) {
+        Team team = teamRepository.findById(id).get();
+        team.setConference(newConference);
+        return teamRepository.save(team);
+    }
+
+    @GetMapping("/changeRecord/{id}/{newRecord}")
+    public Team changeRecord(
+            @PathVariable("id") Integer id,
+            @PathVariable("newRecord") String newRecord) {
+        Team team = teamRepository.findById(id).get();
+        team.setRecord(newRecord);
+        return teamRepository.save(team);
+    }
+
+    @GetMapping("/changeStanding/{id}/{newStanding}")
+    public Team changeStanding(
+            @PathVariable("id") Integer id,
+            @PathVariable("newStanding") String newStanding) {
+        Team team = teamRepository.findById(id).get();
+        team.setStanding(newStanding);
+        return teamRepository.save(team);
+    }
+
+    @GetMapping("/changeGameSchedule/{id}/{newGameSchedule}")
+    public Team changeGameSchedule(
+            @PathVariable("id") Integer id,
+            @PathVariable("newGameSchedule") String newGameSchedule) {
+        Team team = teamRepository.findById(id).get();
+        team.setGame_schedule(newGameSchedule);
+        return teamRepository.save(team);
+    }
 }

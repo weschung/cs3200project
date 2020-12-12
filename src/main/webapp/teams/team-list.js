@@ -47,9 +47,6 @@ class TeamList extends React.Component {
                                         Schedule: {team.game_schedule};
                                     </td>
                                     <td>
-                                        Year Founded: {team.yr_founded}
-                                    </td>
-                                    <td>
                                         <button onClick={() => this.deleteTeam(team.id)}>
                                             Delete
                                         </button>
@@ -66,7 +63,10 @@ class TeamList extends React.Component {
                 </table>
                 <button onClick={this.createTeam}>
                     Create
-                </button>
+                </button> <br/> <br/>
+                <a href="http://localhost:8080/home.html">
+                    Home
+                </a>
             </div>
         )
     }

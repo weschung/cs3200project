@@ -32,7 +32,19 @@ class FanList extends React.Component {
                                         Name: {fan.first_name} {fan.last_name};
                                     </td>
                                     <td>
-                                        Season Pass: {fan.season_pass.toString()};
+                                        Username: {fan.username};
+                                    </td>
+                                    <td>
+                                        Password: {fan.password};
+                                    </td>
+                                    <td>
+                                        Date of Birth: {fan.dob};
+                                    </td>
+                                    <td>
+                                        Email: {fan.email};
+                                    </td>
+                                    <td>
+                                        Has Season Pass: {fan.season_pass.toString()};
                                     </td>
                                     <td>
                                         Team ID: {fan.team_id};
@@ -54,8 +66,11 @@ class FanList extends React.Component {
                 </table>
                 <button onClick={this.createFan}>
                     Create
-                </button>
-                </div>
+                </button> <br/> <br/>
+                <a href="http://localhost:8080/home.html">
+                    Home
+                </a>
+            </div>
         )
     }
 }

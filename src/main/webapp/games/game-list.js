@@ -54,7 +54,10 @@ class GameList extends React.Component {
                 </table>
                 <button onClick={this.createGame}>
                     Create
-                </button>
+                </button> <br/> <br/>
+                <a href="http://localhost:8080/home.html">
+                    Home
+                </a>
             </div>
         )
     }

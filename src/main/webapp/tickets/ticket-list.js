@@ -54,7 +54,10 @@ class TicketList extends React.Component {
                 </table>
                 <button onClick={this.createTicket}>
                     Create
-                </button>
+                </button> <br/> <br/>
+                <a href="http://localhost:8080/home.html">
+                    Home
+                </a>
             </div>
         )
     }
