@@ -1,6 +1,7 @@
 package com.example.wap.daos;
 
 import com.example.wap.models.Fan;
+import com.example.wap.models.Team;
 import com.example.wap.models.User;
 import com.example.wap.repositories.FanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,9 +58,9 @@ public class FanDao {
     @GetMapping("/changeFanTeam/{id}/{newTeam}")
     public Fan changeFanTeam(
             @PathVariable("id") Integer id,
-            @PathVariable("newTeam") Integer newTeam) {
+            @PathVariable("newTeam") Team newTeam) {
         Fan fan = FanRepository.findById(id).get();
-        fan.setTeam_id(newTeam);
+        fan.setTeam_fan(newTeam);
         return FanRepository.save(fan);
     }
 

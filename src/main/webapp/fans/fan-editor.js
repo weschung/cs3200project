@@ -111,13 +111,13 @@ class FanEditor extends React.Component {
                     Save Email
                 </button> <br/> <br/>
 
-                Team ID: <input
+                Team ID, current Team ID: {this.state.fan.team_id}: <input
                 onChange={(event) => this.setState({
                     fan: {
                         ...this.state.fan,
-                        team_id: event.target.value}})}
+                        team_fan: event.target.value}})}
                 className="form-control"
-                value={this.state.fan.team_id}/>
+                value={this.state.fan.team_fan}/>
                 <button onClick={this.saveTeam}>
                     Save Team ID
                 </button> <br/> <br/>

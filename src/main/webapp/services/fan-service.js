@@ -35,7 +35,7 @@ const renameFan = (fan) =>
         .then(response => response.json())
 
 const changeFanTeam = (fan) =>
-    fetch(`${CHANGE_FAN_TEAM}/${fan.id}/${fan.team_id}`)
+    fetch(`${CHANGE_FAN_TEAM}/${fan.id}/${fan.team_fan}`)
         .then(response => response.json())
 
 const changeFanPassword = (fan) =>

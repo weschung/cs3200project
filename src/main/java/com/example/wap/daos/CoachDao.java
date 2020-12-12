@@ -1,6 +1,8 @@
 package com.example.wap.daos;
 
 import com.example.wap.models.Coach;
+import com.example.wap.models.Manager;
+import com.example.wap.models.Team;
 import com.example.wap.repositories.CoachRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,18 +55,18 @@ public class CoachDao {
     @GetMapping("/changeCoachTeam/{id}/{team_id}")
     public Coach changeTeam(
             @PathVariable("id") Integer id,
-            @PathVariable("team_id") Integer newTeam) {
+            @PathVariable("team_id") Team newTeam) {
         Coach coach = CoachRepository.findById(id).get();
-        coach.setTeam_id(newTeam);
+        coach.setTeam_coach(newTeam);
         return CoachRepository.save(coach);
     }
 
     @GetMapping("/changeCoachManager/{id}/{newManager}")
     public Coach changeManager(
             @PathVariable("id") Integer id,
-            @PathVariable("newManager") Integer newManager) {
+            @PathVariable("newManager") Manager newManager) {
         Coach coach = CoachRepository.findById(id).get();
-        coach.setManager_id(newManager);
+        coach.setManager_coach(newManager);
         return CoachRepository.save(coach);
     }
 

@@ -21,6 +21,16 @@ public class Fan extends User{
     @JoinColumn(name = "team_id")
     private Team team_fan;
 
+    @Column(name = "team_id", updatable = false, insertable = false)
+    private String team_id;
+
+    public String getTeam_id() {
+        return team_id;
+    }
+
+    public void setTeam_id(String team_id) {
+        this.team_id = team_id;
+    }
 
     public void setTeam_fan(Team team_fan) {
         this.team_fan = team_fan;
