@@ -1,5 +1,7 @@
 package com.example.wap.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,15 +19,19 @@ public class Team {
     private String game_schedule;
 
     @OneToMany(mappedBy = "team_player")
+    @JsonManagedReference
     private List<Player> players;
 
     @OneToMany(mappedBy = "team_coach")
+    @JsonManagedReference
     private List<Coach> coaches;
 
     @OneToMany(mappedBy = "team_fan")
+    @JsonManagedReference
     private List<Fan> fans;
 
     @OneToMany(mappedBy = "team_game")
+    @JsonManagedReference
     private List<Game> games;
 
     public List<Player> getPlayers() {

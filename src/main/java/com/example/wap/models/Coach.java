@@ -1,6 +1,7 @@
 package com.example.wap.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -18,7 +19,7 @@ public class Coach{
     private String coach_bank;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
+    @JsonBackReference
     @JoinColumn(name = "team_id")
     private Team team_coach;
 
@@ -26,7 +27,7 @@ public class Coach{
     private String team_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
+    @JsonBackReference
     @JoinColumn(name = "manager_id")
     private Manager manager_coach;
 

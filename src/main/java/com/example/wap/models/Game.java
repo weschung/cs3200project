@@ -1,5 +1,6 @@
 package com.example.wap.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -16,7 +17,7 @@ public class Game {
     private String score;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
+    @JsonBackReference
     @JoinColumn(name = "team", nullable = false)
     private Team team_game;
 
@@ -24,7 +25,7 @@ public class Game {
     private Integer team_id;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "game")
+    @OneToMany(mappedBy = "ticket_game")
     private List<Ticket> tickets;
 
     public Integer getId() {

@@ -38,6 +38,9 @@ class TicketList extends React.Component {
                                     Date: {ticket.date}
                                 </td>
                                 <td>
+                                    Time: {ticket.time}
+                                </td>
+                                <td>
                                     <button onClick={() => this.deleteTicket(ticket.id)}>
                                         Delete
                                     </button>

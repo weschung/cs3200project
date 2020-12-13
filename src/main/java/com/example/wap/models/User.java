@@ -1,5 +1,7 @@
 package com.example.wap.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -18,9 +20,11 @@ public class User {
     private String email;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference
     private List<Phone> phones;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference
     private List<Address> addresses;
 
     public List<Address> getAddresses() {

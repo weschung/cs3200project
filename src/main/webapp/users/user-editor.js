@@ -83,7 +83,7 @@ class UserEditor extends React.Component {
                     Save Last Name
                 </button> <br/> <br/>
 
-                Date of Birth (format YYYY-MM-DD 00:00:00): <input
+                Date of Birth (format YYYY-MM-DD): <input
                     onChange={(event) => this.setState({
                         user: {
                             ...this.state.user,

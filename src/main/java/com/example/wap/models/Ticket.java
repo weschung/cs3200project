@@ -6,41 +6,70 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="tickets")
-@IdClass(TicketId.class)
 public class Ticket {
     @Id
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn
-            (name="fan_id", referencedColumnName="id")
-    private Fan fan;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Id
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
-    @ManyToOne
-    @JoinColumn
-            (name="game_id", referencedColumnName="id")
-    private Game game;
+    @JoinColumn(name = "game_id")
+    private Game ticket_game;
+
+    @Column(name = "game_id", updatable = false, insertable = false)
+    private Integer ticket_game_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name = "fan_id")
+    private Fan ticket_fan;
+
+    @Column(name = "fan_id", updatable = false, insertable = false)
+    private Integer ticket_fan_id;
 
     private Float price;
     private String seat;
     private String date;
     private String time;
 
-    public Fan getFan() {
-        return fan;
+    public Integer getId() {
+        return id;
     }
 
-    public void setFan(Fan fan) {
-        this.fan = fan;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Game getGame() {
-        return game;
+    public Game getTicket_game() {
+        return ticket_game;
     }
 
-    public void setGame(Game game) {
-        this.game = game;
+    public void setTicket_game(Game ticket_game) {
+        this.ticket_game = ticket_game;
+    }
+
+    public Integer getTicket_game_id() {
+        return ticket_game_id;
+    }
+
+    public void setTicket_game_id(Integer ticket_game_id) {
+        this.ticket_game_id = ticket_game_id;
+    }
+
+    public Fan getTicket_fan() {
+        return ticket_fan;
+    }
+
+    public void setTicket_fan(Fan ticket_fan) {
+        this.ticket_fan = ticket_fan;
+    }
+
+    public Integer getTicket_fan_id() {
+        return ticket_fan_id;
+    }
+
+    public void setTicket_fan_id(Integer ticket_fan_id) {
+        this.ticket_fan_id = ticket_fan_id;
     }
 
     public Float getPrice() {
