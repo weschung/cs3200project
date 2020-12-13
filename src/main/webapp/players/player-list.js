@@ -38,6 +38,21 @@ class PlayerList extends React.Component {
                                     Manager ID: {player.manager_id};
                                 </td>
                                 <td>
+                                    Age: {player.age};
+                                </td>
+                                <td>
+                                    Height: {player.height};
+                                </td>
+                                <td>
+                                    Player Salary: {player.player_payment};
+                                </td>
+                                <td>
+                                    Player Bank: {player.player_bank};
+                                </td>
+                                <td>
+                                    Player Statistic: {player.statistic};
+                                </td>
+                                <td>
                                     <button onClick={() => this.deletePlayer(player.id)}>
                                         Delete
                                     </button>
