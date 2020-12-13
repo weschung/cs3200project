@@ -44,6 +44,12 @@ class ManagerList extends React.Component {
                                     Email: {manager.email};
                                 </td>
                                 <td>
+                                    Phone(s): {JSON.stringify(manager.phones, ["phone", "primary"], '  ')};
+                                </td>
+                                <td>
+                                    Address(es): {JSON.stringify(manager.addresses, ["street", "apartment", "city", "zip"], '  ')};
+                                </td>
+                                <td>
                                     Meeting Schedule: {manager.meeting_schedule};
                                 </td>
                                 <td>

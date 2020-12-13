@@ -44,6 +44,12 @@ class FanList extends React.Component {
                                         Email: {fan.email};
                                     </td>
                                     <td>
+                                        Phone(s): {JSON.stringify(fan.phones, ["phone", "primary"], '  ')};
+                                    </td>
+                                    <td>
+                                        Address(es): {JSON.stringify(fan.addresses, ["street", "apartment", "city", "zip"], '  ')};
+                                    </td>
+                                    <td>
                                         Has Season Pass: {fan.season_pass.toString()};
                                     </td>
                                     <td>

@@ -44,11 +44,10 @@ class UserList extends React.Component {
                                         Email: {user.email};
                                     </td>
                                     <td>
-                                        Phone(s): {//user.phones[0].phone
-                                        };
+                                        Phone(s): {JSON.stringify(user.phones, ["phone", "primary"], '  ')};
                                     </td>
                                     <td>
-                                        Address(es): {};
+                                        Address(es): {JSON.stringify(user.addresses, ["street", "apartment", "city", "zip"], '  ')};
                                     </td>
                                     <td>
                                         <button onClick={() => this.deleteUser(user.id)}>
