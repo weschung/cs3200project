@@ -44,7 +44,8 @@ class UserList extends React.Component {
                                         Email: {user.email};
                                     </td>
                                     <td>
-                                        Phone(s): {};
+                                        Phone(s): {//user.phones[0].phone
+                                        };
                                     </td>
                                     <td>
                                         Address(es): {};

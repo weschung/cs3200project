@@ -28,6 +28,7 @@ public class PhoneDao {
     @GetMapping("/createPhone")
     public Phone createPhone() {
         Phone phone = new Phone();
+        phone.setPhone("000000000");
         return phoneRepository.save(phone);
     }
 }

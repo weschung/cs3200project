@@ -35,6 +35,9 @@ class PlayerList extends React.Component {
                                     Team ID: {player.team_id};
                                 </td>
                                 <td>
+                                    Manager ID: {player.manager_id};
+                                </td>
+                                <td>
                                     <button onClick={() => this.deletePlayer(player.id)}>
                                         Delete
                                     </button>

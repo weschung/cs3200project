@@ -30,6 +30,17 @@ public class Coach{
     @JoinColumn(name = "manager_id")
     private Manager manager_coach;
 
+    @Column(name = "manager_id", updatable = false, insertable = false)
+    private String manager_id;
+
+    public String getManager_id() {
+        return manager_id;
+    }
+
+    public void setManager_id(String manager_id) {
+        this.manager_id = manager_id;
+    }
+
     public String getTeam_id() {
         return team_id;
     }
