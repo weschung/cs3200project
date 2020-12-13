@@ -3,6 +3,8 @@ const FIND_PLAYER_BY_ID = "http://localhost:8080/findPlayerById"
 const CREATE_PLAYER_URL = "http://localhost:8080/createPlayer"
 const DELETE_PLAYER_URL = "http://localhost:8080/deletePlayer"
 const RENAME_PLAYER = "http://localhost:8080/renamePlayer"
+const CHANGE_PLAYER_TEAM = "http://localhost:8080/changePlayerTeam"
+const CHANGE_PLAYER_MANAGER = "http://localhost:8080/changePlayerManager"
 const CHANGE_AGE = "http://localhost:8080/changeAge"
 const CHANGE_HEIGHT = "http://localhost:8080/changeHeight"
 const CHANGE_PLAYER_PAYMENT = "http://localhost:8080/changePlayerPayment"
@@ -26,6 +28,14 @@ const deletePlayer = (id) =>
 
 const renamePlayer = (player) =>
     fetch(`${RENAME_PLAYER}/${player.id}/${player.player_name}`)
+        .then(response => response.json())
+
+const changePlayerTeam = (player) =>
+    fetch(`${CHANGE_PLAYER_TEAM}/${player.id}/${player.team_player}`)
+        .then(response => response.json())
+
+const changePlayerManager = (player) =>
+    fetch(`${CHANGE_PLAYER_MANAGER}/${player.id}/${player.manager_player}`)
         .then(response => response.json())
 
 const changeAge = (player) =>

@@ -34,30 +34,6 @@ public class Player{
     @Column(name = "manager_id", updatable = false, insertable = false)
     private String manager_id;
 
-    public String getManager_id() {
-        return manager_id;
-    }
-
-    public void setManager_id(String manager_id) {
-        this.manager_id = manager_id;
-    }
-
-    public String getTeam_id() {
-        return team_id;
-    }
-
-    public void setTeam_id(String team_id) {
-        this.team_id = team_id;
-    }
-
-    public void setManager_player(Manager manager_player) {
-        this.manager_player = manager_player;
-    }
-
-    public void setTeam_player(Team team_player) {
-        this.team_player = team_player;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -112,5 +88,37 @@ public class Player{
 
     public void setStatistic(String statistic) {
         this.statistic = statistic;
+    }
+
+    public Team getTeam_player() {
+        return team_player;
+    }
+
+    public void setTeam_player(Team team_player) {
+        this.team_player = team_player;
+    }
+
+    public String getTeam_id() {
+        return team_id;
+    }
+
+    public void setTeam_id(String team_id) {
+        this.team_id = team_id;
+    }
+
+    public Manager getManager_player() {
+        return manager_player;
+    }
+
+    public void setManager_player(Manager manager_player) {
+        this.manager_player = manager_player;
+    }
+
+    public String getManager_id() {
+        return manager_id;
+    }
+
+    public void setManager_id(String manager_id) {
+        this.manager_id = manager_id;
     }
 }

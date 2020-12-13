@@ -16,6 +16,12 @@ class PlayerEditor extends React.Component {
     savePlayerName = () =>
         renamePlayer(this.state.player)
 
+    savePlayerTeam = () =>
+        changePlayerTeam(this.state.player)
+
+    savePlayerManager = () =>
+        changePlayerManager(this.state.player)
+
     saveAge = () =>
         changeAge(this.state.player)
 
@@ -48,6 +54,28 @@ class PlayerEditor extends React.Component {
                 value={this.state.player.player_name}/>
                 <button onClick={this.savePlayerName}>
                     Save Player Name
+                </button> <br/> <br/>
+
+                Team ID, current Team ID: {this.state.player.team_id}: <input
+                onChange={(event) => this.setState({
+                    player: {
+                        ...this.state.player,
+                        team_player: event.target.value}})}
+                className="form-control"
+                value={this.state.player.team_player}/>
+                <button onClick={this.savePlayerTeam}>
+                    Save Team ID
+                </button> <br/> <br/>
+
+                Manager ID, current Manager ID: {this.state.player.manager_id}: <input
+                onChange={(event) => this.setState({
+                    player: {
+                        ...this.state.player,
+                        manager_player: event.target.value}})}
+                className="form-control"
+                value={this.state.player.manager_player}/>
+                <button onClick={this.savePlayerManager}>
+                    Save Manager ID
                 </button> <br/> <br/>
 
                 Age: <input

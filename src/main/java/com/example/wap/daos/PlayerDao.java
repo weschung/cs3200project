@@ -1,6 +1,9 @@
 package com.example.wap.daos;
 
+import com.example.wap.models.Fan;
+import com.example.wap.models.Manager;
 import com.example.wap.models.Player;
+import com.example.wap.models.Team;
 import com.example.wap.repositories.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,6 +41,24 @@ public class PlayerDao {
             @PathVariable("newPlayerName") String newPlayerName) {
         Player player = PlayerRepository.findById(id).get();
         player.setPlayer_name(newPlayerName);
+        return PlayerRepository.save(player);
+    }
+
+    @GetMapping("/changePlayerTeam/{id}/{newTeam}")
+    public Player changePlayerTeam(
+            @PathVariable("id") Integer id,
+            @PathVariable("newTeam") Team newTeam) {
+        Player player = PlayerRepository.findById(id).get();
+        player.setTeam_player(newTeam);
+        return PlayerRepository.save(player);
+    }
+
+    @GetMapping("/changePlayerManager/{id}/{newManager}")
+    public Player changePlayerManager(
+            @PathVariable("id") Integer id,
+            @PathVariable("newManager") Manager newManager) {
+        Player player = PlayerRepository.findById(id).get();
+        player.setManager_player(newManager);
         return PlayerRepository.save(player);
     }
 
