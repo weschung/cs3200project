@@ -57,7 +57,7 @@ class CoachEditor extends React.Component {
                     onChange={(event) => this.setState({
                         coach: {
                             ...this.state.coach,
-                            password: event.target.value}})}
+                            strategy: event.target.value}})}
                     className="form-control"
                     value={this.state.coach.strategy}/>
                 <button onClick={this.saveStrategy}>
@@ -101,9 +101,9 @@ class CoachEditor extends React.Component {
                     onChange={(event) => this.setState({
                         coach: {
                             ...this.state.coach,
-                            payment: event.target.value}})}
+                            coach_payment: event.target.value}})}
                     className="form-control"
-                    value={this.state.coach.payment}/>
+                    value={this.state.coach.coach_payment}/>
                 <button onClick={this.savePayment}>
                     Save Payment
                 </button> <br/> <br/>
@@ -112,9 +112,9 @@ class CoachEditor extends React.Component {
                     onChange={(event) => this.setState({
                         coach: {
                             ...this.state.coach,
-                            bank: event.target.value}})}
+                            coach_bank: event.target.value}})}
                     className="form-control"
-                    value={this.state.coach.bank}/>
+                    value={this.state.coach.coach_bank}/>
                 <button onClick={this.saveBank}>
                     Save Bank Information
                 </button> <br/> <br/>
