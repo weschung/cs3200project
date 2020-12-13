@@ -15,10 +15,13 @@ public class Game {
     private String opponent;
     private String score;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @JoinColumn(name = "team", nullable = false)
     private Team team_game;
+
+    @Column(name = "team", updatable = false, insertable = false)
+    private Integer team_id;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "game")
@@ -32,12 +35,20 @@ public class Game {
         this.id = id;
     }
 
-    public List<Ticket> getTickets() {
-        return tickets;
+    public String getOpponent() {
+        return opponent;
     }
 
-    public void setTickets(List<Ticket> tickets) {
-        this.tickets = tickets;
+    public void setOpponent(String opponent) {
+        this.opponent = opponent;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
     }
 
     public Team getTeam_game() {
@@ -48,16 +59,20 @@ public class Game {
         this.team_game = team_game;
     }
 
-    public String getOpponent() {
-        return opponent;
+    public Integer getTeam_id() {
+        return team_id;
     }
 
-    public void setOpponent(String opponent) {
-        this.opponent = opponent;
+    public void setTeam_id(Integer team_id) {
+        this.team_id = team_id;
     }
 
-    public String getScore() { return score; }
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
 
-    public void setScore(String score) { this.score = score; }
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
 }
 

@@ -11,8 +11,8 @@ class GameList extends React.Component {
     componentDidMount = () =>
         this.findAllGames()
 
-    createGame = () =>
-        createGame()
+    saveTeamGame = (game) =>
+        createGame(game)
             .then(this.findAllGames)
 
     deleteGame = (id) =>
@@ -29,7 +29,7 @@ class GameList extends React.Component {
                         this.state.games.map(game =>
                             <tr>
                                 <td>
-                                    Team: {game.team}
+                                    Team: {game.team_id}
                                 </td>
                                 <td>
                                     Opponent: {game.opponent}
@@ -52,9 +52,19 @@ class GameList extends React.Component {
                     }
                     </tbody>
                 </table>
-                <button onClick={this.createGame}>
-                    Create
-                </button> <br/> <br/>
+                Create Game for Team ID: <input
+                onChange={(event) => this.setState({
+                    game: {
+                        ...this.state.game,
+                        team_game: event.target.value,
+                    }
+                })}
+                className="form-control"/>
+                <button onClick={() => this.saveTeamGame(this.state.game.team_game)}>
+                    New Game for Team
+                </button>
+
+                <br/> <br/>
                 <a href="/home-manager.html">
                     Home
                 </a>
