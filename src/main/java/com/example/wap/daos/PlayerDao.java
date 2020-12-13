@@ -25,4 +25,64 @@ public class PlayerDao {
             @PathVariable("id") Integer id) {
         PlayerRepository.deleteById(id);
     }
+
+    @GetMapping("/createPlayer")
+    public Player createPlayer() {
+        Player player = new Player();
+        return PlayerRepository.save(player);
+    }
+
+    @GetMapping("/renamePlayer/{id}/{newPlayerName}")
+    public Player renamePlayer(
+            @PathVariable("id") Integer id,
+            @PathVariable("newPlayerName") String newPlayerName) {
+        Player player = PlayerRepository.findById(id).get();
+        player.setPlayer_name(newPlayerName);
+        return PlayerRepository.save(player);
+    }
+
+    @GetMapping("/changeAge/{id}/{newAge}")
+    public Player changeAge(
+            @PathVariable("id") Integer id,
+            @PathVariable("newAge") Integer newAge) {
+        Player player = PlayerRepository.findById(id).get();
+        player.setAge(newAge);
+        return PlayerRepository.save(player);
+    }
+
+    @GetMapping("/changeHeight/{id}/{newHeight}")
+    public Player changeHeight(
+            @PathVariable("id") Integer id,
+            @PathVariable("newHeight") String newHeight) {
+        Player player = PlayerRepository.findById(id).get();
+        player.setHeight(newHeight);
+        return PlayerRepository.save(player);
+    }
+
+    @GetMapping("/changePlayerPayment/{id}/{newPayment}")
+    public Player changePlayerPayment(
+            @PathVariable("id") Integer id,
+            @PathVariable("newPayment") Integer newPayment) {
+        Player player = PlayerRepository.findById(id).get();
+        player.setPlayer_payment(newPayment);
+        return PlayerRepository.save(player);
+    }
+
+    @GetMapping("/changePlayerBank/{id}/{newPlayerBank}")
+    public Player changePlayerBank(
+            @PathVariable("id") Integer id,
+            @PathVariable("newPlayerBank") String newPlayerBank) {
+        Player player = PlayerRepository.findById(id).get();
+        player.setPlayer_bank(newPlayerBank);
+        return PlayerRepository.save(player);
+    }
+
+    @GetMapping("/changeStatistic/{id}/{newStatistic}")
+    public Player changeStatistic(
+            @PathVariable("id") Integer id,
+            @PathVariable("newStatistic") String newStatistic) {
+        Player player = PlayerRepository.findById(id).get();
+        player.setStatistic(newStatistic);
+        return PlayerRepository.save(player);
+    }
 }
