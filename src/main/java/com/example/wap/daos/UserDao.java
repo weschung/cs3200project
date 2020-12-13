@@ -1,6 +1,6 @@
 package com.example.wap.daos;
 
-import com.example.wap.models.Phone;
+
 import com.example.wap.models.User;
 import com.example.wap.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 public class UserDao {
@@ -32,7 +31,8 @@ public class UserDao {
     public User createUser() {
         User user = new User();
         user.setUsername("New User");
-        return userRepository.save(user);
+        User new_user = userRepository.save(user);;
+        return new_user;
     }
     @GetMapping("/renameUser/{id}/{newUsername}")
     public User renameUser(
