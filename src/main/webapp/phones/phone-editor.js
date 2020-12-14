@@ -27,9 +27,9 @@ class PhoneEditor extends React.Component {
                 ID: <input className="form-control" readOnly={true}
                            value={this.state.phone.id}/> <br/>
 
-                {Phone}: <input
+                Phone: <input
                 onChange={(event) => this.setState({
-                    user: {
+                    phone: {
                         ...this.state.phone,
                         phone: event.target.value}})}
                 className="form-control"
@@ -49,8 +49,8 @@ class PhoneEditor extends React.Component {
                     Save Primary
                 </button> <br/> <br/>
 
-                <a href="phone-list.html">
-                    Done
+                <a href="/home-manager.html">
+                    Home
                 </a> <br/> <br/>
             </div>
         )
