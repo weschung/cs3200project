@@ -118,7 +118,22 @@ class ManagerEditor extends React.Component {
                 <button onClick={this.saveSchedule}>
                     Save Meeting Schedule
                 </button> <br/> <br/>
-
+                Change &nbsp;
+                <a href={'/phones/phone-list.html?id='+ this.state.manager.id}>
+                    Phones
+                </a>
+                <br/>
+                {JSON.stringify(this.state.manager.phones, ["phone", "primary_p"], '\t')}
+                <br/>
+                <br/>
+                Change &nbsp;
+                <a href={'/addresses/address-list.html?id='+ this.state.manager.id}>
+                    Addresses
+                </a>
+                <br/>
+                {JSON.stringify(this.state.manager.addresses, ["street", "apartment", "city", "zip", "primary_p"], '\t')}
+                <br/>
+                <br/>
                 <a href="manager-list.html">
                     Done
                 </a> <br/> <br/> <br/> <br/> <br/> <br/>

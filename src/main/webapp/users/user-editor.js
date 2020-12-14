@@ -112,6 +112,14 @@ class UserEditor extends React.Component {
                 {JSON.stringify(this.state.user.phones, ["phone", "primary_p"], '\t')}
                 <br/>
                 <br/>
+                Change &nbsp;
+                <a href={'/addresses/address-list.html?id='+ this.state.user.id}>
+                    Addresses
+                </a>
+                <br/>
+                {JSON.stringify(this.state.user.addresses, ["street", "apartment", "city", "zip", "primary_p"], '\t')}
+                <br/>
+                <br/>
                 <a href="user-list.html">
                     Done
                 </a> <br/> <br/> <br/> <br/> <br/> <br/>

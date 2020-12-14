@@ -132,7 +132,22 @@ class FanEditor extends React.Component {
                 <button onClick={this.saveBuyPass}>
                     Save Season Pass
                 </button> <br/> <br/>
-
+                Change &nbsp;
+                <a href={'/phones/phone-list.html?id='+ this.state.fan.id}>
+                    Phones
+                </a>
+                <br/>
+                {JSON.stringify(this.state.fan.phones, ["phone", "primary_p"], '\t')}
+                <br/>
+                <br/>
+                Change &nbsp;
+                <a href={'/addresses/address-list.html?id='+ this.state.fan.id}>
+                    Addresses
+                </a>
+                <br/>
+                {JSON.stringify(this.state.fan.addresses, ["street", "apartment", "city", "zip", "primary_p"], '\t')}
+                <br/>
+                <br/>
                 <a href="fan-list.html">
                     Done
                 </a> <br/> <br/> <br/> <br/> <br/> <br/>
