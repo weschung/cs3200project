@@ -1,14 +1,15 @@
 package com.example.wap.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "fans")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Fan extends User{
 
     private Boolean season_pass;

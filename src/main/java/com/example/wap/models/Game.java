@@ -1,7 +1,7 @@
 package com.example.wap.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -9,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name="games")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

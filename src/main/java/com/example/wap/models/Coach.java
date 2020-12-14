@@ -2,12 +2,13 @@ package com.example.wap.models;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "coaches")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Coach{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
