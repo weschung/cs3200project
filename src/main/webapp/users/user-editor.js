@@ -104,7 +104,14 @@ class UserEditor extends React.Component {
                 <button onClick={this.saveEmail}>
                     Save Email
                 </button> <br/> <br/>
-
+                Change &nbsp;
+                <a href={'/phones/phone-list.html?id='+ this.state.user.id}>
+                    Phones
+                </a>
+                <br/>
+                {JSON.stringify(this.state.user.phones, ["phone", "primary_p"], '\t')}
+                <br/>
+                <br/>
                 <a href="user-list.html">
                     Done
                 </a> <br/> <br/> <br/> <br/> <br/> <br/>

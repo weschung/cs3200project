@@ -19,11 +19,11 @@ public class User {
     private String last_name;
     private String email;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userid")
     @JsonManagedReference
     private List<Phone> phones;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userid")
     @JsonManagedReference
     private List<Address> addresses;
 

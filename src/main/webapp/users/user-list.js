@@ -44,7 +44,7 @@ class UserList extends React.Component {
                                         Email: {user.email};
                                     </td>
                                     <td>
-                                        Phone(s): {JSON.stringify(user.phones, ["phone", "primary"], '  ')};
+                                        Phone(s): {JSON.stringify(user.phones, ["phone", "primary_p"], '  ')};
                                     </td>
                                     <td>
                                         Address(es): {JSON.stringify(user.addresses, ["street", "apartment", "city", "zip"], '  ')};

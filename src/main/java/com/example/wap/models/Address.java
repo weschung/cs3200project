@@ -14,12 +14,12 @@ public class Address {
     private String apartment;
     private String city;
     private String zip;
-    private Boolean primary;
+    private Boolean primary_p;
 
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private User userid;
 
     public Integer getId() {
         return id;
@@ -61,19 +61,19 @@ public class Address {
         this.zip = zip;
     }
 
-    public Boolean getPrimary() {
-        return primary;
+    public Boolean getPrimary_p() {
+        return primary_p;
     }
 
-    public void setPrimary(Boolean primary) {
-        this.primary = primary;
+    public void setPrimary_p(Boolean primary_p) {
+        this.primary_p = primary_p;
     }
 
-    public User getUser() {
-        return user;
+    public User getUserid() {
+        return userid;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserid(User userid) {
+        this.userid = userid;
     }
 }
