@@ -44,7 +44,7 @@ class FanList extends React.Component {
                                         Email: {fan.email};
                                     </td>
                                     <td>
-                                        Phone(s): {JSON.stringify(fan.phones, ["phone", "primary_p"], '  ')};
+                                        Phone(s): {JSON.stringify(fan.phones, ["phone"], '  ')};
                                     </td>
                                     <td>
                                         Address(es): {JSON.stringify(fan.addresses, ["street", "apartment", "city", "zip"], '  ')};
