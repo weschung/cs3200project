@@ -58,7 +58,7 @@ class PlayerList extends React.Component {
                     </tbody>
                 </table>
                 <br/> <br/>
-                <a href="/home-manager.html">
+                <a href="/home-fan.html">
                     Home
                 </a>
             </div>

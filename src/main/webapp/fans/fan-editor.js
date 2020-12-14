@@ -133,7 +133,7 @@ class FanEditor extends React.Component {
                     Save Season Pass
                 </button> <br/> <br/>
                 Change &nbsp;
-                <a href={'/phones/phone-list.html?id='+ this.state.fan.id}>
+                <a href={'/phones/phone-list-fan.html?id='+ this.state.fan.id}>
                     Phones
                 </a>
                 <br/>
@@ -141,7 +141,7 @@ class FanEditor extends React.Component {
                 <br/>
                 <br/>
                 Change &nbsp;
-                <a href={'/addresses/address-list.html?id='+ this.state.fan.id}>
+                <a href={'/addresses/address-list-fan.html?id='+ this.state.fan.id}>
                     Addresses
                 </a>
                 <br/>
