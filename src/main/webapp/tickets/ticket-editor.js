@@ -25,6 +25,12 @@ class TicketEditor extends React.Component {
     saveTime = () =>
         changeTime(this.state.ticket)
 
+    saveTicketFan = () =>
+        changeTicketFan(this.state.ticket)
+
+    saveTicketGame = () =>
+        changeTicketGame(this.state.ticket)
+
     render() {
         return(
             <div className="container">
@@ -72,6 +78,28 @@ class TicketEditor extends React.Component {
                 value={this.state.ticket.time}/>
                 <button onClick={this.saveTime}>
                     Save Time
+                </button> <br/> <br/>
+
+                Fan ID, current Fan ID: {this.state.ticket.ticket_fan_id}: <input
+                onChange={(event) => this.setState({
+                    ticket: {
+                        ...this.state.ticket,
+                        ticket_fan: event.target.value}})}
+                className="form-control"
+                value={this.state.ticket.ticket_fan}/>
+                <button onClick={this.saveTicketFan}>
+                    Save Fan ID
+                </button> <br/> <br/>
+
+                Game ID, current Game ID: {this.state.ticket.ticket_game_id}: <input
+                onChange={(event) => this.setState({
+                    ticket: {
+                        ...this.state.ticket,
+                        ticket_game: event.target.value}})}
+                className="form-control"
+                value={this.state.ticket.ticket_game}/>
+                <button onClick={this.saveTicketGame}>
+                    Save Game ID
                 </button> <br/> <br/>
 
                 <a href="ticket-list.html">

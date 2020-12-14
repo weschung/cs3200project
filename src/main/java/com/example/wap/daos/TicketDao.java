@@ -1,7 +1,6 @@
 package com.example.wap.daos;
 
-import com.example.wap.models.Coach;
-import com.example.wap.models.Ticket;
+import com.example.wap.models.*;
 import com.example.wap.repositories.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TicketDao {
     @Autowired
     TicketRepository ticketRepository;
+    private Integer id;
+    private Game newGame;
+
     @GetMapping("/findAllTickets")
     public Iterable<Ticket> findAllTickets() {
         return ticketRepository.findAll();
@@ -65,6 +67,24 @@ public class TicketDao {
             @PathVariable("newTime") String newTime) {
         Ticket ticket = ticketRepository.findById(id).get();
         ticket.setTime(newTime);
+        return ticketRepository.save(ticket);
+    }
+
+    @GetMapping("/changeTicketFan/{id}/{newFan}")
+    public Ticket changeTicketFan(
+            @PathVariable("id") Integer id,
+            @PathVariable("newFan") Fan newFan) {
+        Ticket ticket = ticketRepository.findById(id).get();
+        ticket.setTicket_fan(newFan);
+        return ticketRepository.save(ticket);
+    }
+
+    @GetMapping("/changeTicketGame/{id}/{newGame}")
+    public Ticket changeTicketFan(
+            @PathVariable("id") Integer id,
+            @PathVariable("newGame") Game newGame) {
+        Ticket ticket = ticketRepository.findById(id).get();
+        ticket.setTicket_game(newGame);
         return ticketRepository.save(ticket);
     }
 }

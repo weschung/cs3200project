@@ -6,6 +6,8 @@ const CHANGE_PRICE = "http://localhost:8080/changePrice"
 const CHANGE_SEAT = "http://localhost:8080/changeSeat"
 const CHANGE_DATE = "http://localhost:8080/changeDate"
 const CHANGE_TIME = "http://localhost:8080/changeTime"
+const CHANGE_TICKET_FAN = "http://localhost:8080/changeTicketFan"
+const CHANGE_TICKET_GAME = "http://localhost:8080/changeTicketGame"
 
 const findAllTickets = () =>
     fetch(`${FIND_ALL_TICKETS}`)
@@ -36,4 +38,12 @@ const changeDate = (ticket) =>
 
 const changeTime = (ticket) =>
     fetch(`${CHANGE_TIME}/${ticket.id}/${ticket.time}`)
+        .then(response => response.json())
+
+const changeTicketFan = (ticket) =>
+    fetch(`${CHANGE_TICKET_FAN}/${ticket.id}/${ticket.ticket_fan}`)
+        .then(response => response.json())
+
+const changeTicketGame = (ticket) =>
+    fetch(`${CHANGE_TICKET_GAME}/${ticket.id}/${ticket.ticket_game}`)
         .then(response => response.json())

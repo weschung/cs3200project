@@ -38,6 +38,18 @@ class CoachList extends React.Component {
                                     Manager ID: {coach.manager_id};
                                 </td>
                                 <td>
+                                    Strategy: {coach.strategy};
+                                </td>
+                                <td>
+                                    Practice Schedule: {coach.practice_schedule};
+                                </td>
+                                <td>
+                                    Coach Payment: {coach.coach_payment};
+                                </td>
+                                <td>
+                                    Coach Bank: {coach.coach_bank};
+                                </td>
+                                <td>
                                     <button onClick={() => this.deleteCoach(coach.id)}>
                                         Delete
                                     </button>

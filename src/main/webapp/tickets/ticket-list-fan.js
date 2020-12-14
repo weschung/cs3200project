@@ -29,6 +29,12 @@ class TicketList extends React.Component {
                         this.state.tickets.map(ticket =>
                             <tr>
                                 <td>
+                                    Fan ID: {ticket.ticket_fan_id}
+                                </td>
+                                <td>
+                                    Game ID: {ticket.ticket_game_id}
+                                </td>
+                                <td>
                                     Price: {ticket.price}
                                 </td>
                                 <td>
@@ -40,19 +46,12 @@ class TicketList extends React.Component {
                                 <td>
                                     Time: {ticket.time}
                                 </td>
-                                <td>
-                                    <button onClick={() => this.deleteTicket(ticket.id)}>
-                                        Delete
-                                    </button>
-                                </td>
                             </tr>
                         )
                     }
                     </tbody>
                 </table>
-                <button onClick={this.createTicket}>
-                    Create
-                </button> <br/> <br/>
+                <br/> <br/>
                 <a href="/home-fan.html">
                     Home
                 </a>

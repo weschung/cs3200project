@@ -29,6 +29,12 @@ class TicketList extends React.Component {
                         this.state.tickets.map(ticket =>
                             <tr>
                                 <td>
+                                    Fan ID: {ticket.ticket_fan_id}
+                                </td>
+                                <td>
+                                    Game ID: {ticket.ticket_game_id}
+                                </td>
+                                <td>
                                     Price: {ticket.price}
                                 </td>
                                 <td>
