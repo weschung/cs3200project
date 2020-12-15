@@ -129,12 +129,12 @@ CREATE TABLE `nba_team`.`games` (
   `opponent` VARCHAR(45) NULL,
   `score` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
-  INDEX `team_plays_games_idx` (`home_team` ASC) VISIBLE,
+  INDEX `team_plays_games_idx` (`team` ASC) VISIBLE,
  CONSTRAINT `team_plays_games`
   FOREIGN KEY (`team`)
   REFERENCES `nba_team`.`teams` (`id`)
   ON DELETE NO ACTION
-  ON UPDATE CASCADE;
+  ON UPDATE CASCADE);
     
 CREATE TABLE `nba_team`.`tickets` (
   `id` INT NOT NULL AUTO_INCREMENT,
