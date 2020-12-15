@@ -46,11 +46,22 @@ class TicketList extends React.Component {
                                 <td>
                                     Time: {ticket.time}
                                 </td>
+                                <button onClick={() => this.deleteTicket(ticket.id)}>
+                                    Delete
+                                </button>
+                                <td>
+                                    <a href={`ticket-editor-fan.html?id=${ticket.id}`}>
+                                        Edit
+                                    </a>
+                                </td>
                             </tr>
                         )
                     }
                     </tbody>
                 </table>
+                <button onClick={this.createTicket}>
+                    Create
+                </button>
                 <br/> <br/>
                 <a href="/home-fan.html">
                     Home
