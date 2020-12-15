@@ -12,8 +12,8 @@ INSERT INTO `nba_team`.`fans` (`id`, `team_id`, `season_pass`) VALUES ('456', '2
 INSERT INTO `nba_team`.`games` (`id`, `team`, `opponent`, `score`) VALUES ('1', '123', '234', '111-110');
 INSERT INTO `nba_team`.`games` (`id`, `team`, `opponent`, `score`) VALUES ('2', '234', '123', '90-87');
 
-INSERT INTO `nba_team`.`managers` (`id`, `meeting_schedule`, `team_id`) VALUES ('123', 'M, W, F', '123');
-INSERT INTO `nba_team`.`managers` (`id`, `meeting_schedule`, `team_id`) VALUES ('234', 'T, F', '234');
+INSERT INTO `nba_team`.`managers` (`id`, `meeting_schedule`) VALUES ('123', 'M, W, F');
+INSERT INTO `nba_team`.`managers` (`id`, `meeting_schedule`) VALUES ('234', 'T, F');
 
 INSERT INTO `nba_team`.`coaches` (`id`, `team_id`, `manager_id`, `coach_name`, `strategy`, `practice_schedule`, `coach_payment`, `coach_bank`) VALUES ('1', '123', '123', 'Brad Stevens', 'offensive', 'Mon, Wed, Fri', '10000000', 'Bank of America');
 INSERT INTO `nba_team`.`coaches` (`id`, `team_id`, `manager_id`, `coach_name`, `strategy`, `practice_schedule`, `coach_payment`, `coach_bank`) VALUES ('2', '234', '234', 'Frank Vogel', 'defensive', 'Tues, Thurs, Sat', '5000000', 'TD Bank');
